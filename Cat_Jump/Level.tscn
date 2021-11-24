@@ -9,8 +9,25 @@ extents = Vector2( 112.864, 10 )
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 2000.0
+margin_bottom = 2000.0
+color = Color( 0.960784, 0.890196, 0.647059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Horizon" type="ColorRect" parent="."]
+margin_top = 455.073
+margin_right = 2000.0
+margin_bottom = 458.073
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 187.648, 168.08 )
+position = Vector2( 187.648, 168.179 )
 collision_mask = 3
 
 [node name="Floor" type="StaticBody2D" parent="."]
