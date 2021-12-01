@@ -11,7 +11,7 @@ func _process(_delta):
 	# ist die Katze am Boden, so soll die Animation 'walk' abgespielt werden
 	if is_on_floor():
 		$AnimatedSprite.play("walk")
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_SPEED
 	# ist die Katze in der Luft, so soll die Animation 'jump' abgespielt werden
 	else:

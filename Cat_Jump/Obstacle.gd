@@ -17,4 +17,4 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Obstacle_body_entered(body):
 	# das Spiel wird beendet:
-	get_tree().quit()
+	get_tree().change_scene("res://Menu.tscn")

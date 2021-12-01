@@ -1,21 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level.gd" type="Script" id=2]
+[ext_resource path="res://Grafik/Other/Big_Bottom_Typeface_Normal.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 112.864, 10 )
 
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="Background" type="ColorRect" parent="."]
-margin_right = 2000.0
-margin_bottom = 2000.0
-color = Color( 0.960784, 0.890196, 0.647059, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Horizon" type="ColorRect" parent="."]
 margin_top = 455.073
@@ -45,4 +41,22 @@ shape = SubResource( 1 )
 wait_time = 3.0
 autostart = true
 
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 452.533
+margin_top = 2.13814
+margin_right = 519.533
+margin_bottom = 51.1381
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.290196, 0.156863, 0.0470588, 1 )
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
