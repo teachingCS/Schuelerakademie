@@ -13,6 +13,8 @@ func _process(_delta):
 		$AnimatedSprite.play("walk")
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_SPEED
+			# Sound abspielen, wenn Leertaste (=jump) gedrückt wurde
+			$AudioStreamPlayer.play()
 	# ist die Katze in der Luft, so soll die Animation 'jump' abgespielt werden
 	else:
 		$AnimatedSprite.play("jump")

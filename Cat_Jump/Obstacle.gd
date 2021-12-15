@@ -1,12 +1,15 @@
 extends Area2D
 var animation_list = ["sloth", "couch", "family", " kittens", "maru", "pile", "pizza"]
+var obstacle_speed
 
 func _physics_process(_delta):
-	position.x -= 10
+	position.x -= obstacle_speed
 
 func _ready():
 	randomize()
-	var zufallszahl = randi() % 7
+	# Die Geschwindigkeit eines Objektes soll variieren
+	obstacle_speed = rand_range(5,15)
+	var zufallszahl = randi() % animation_list.size()
 	$AnimatedSprite.play(animation_list[zufallszahl])
 	
 
