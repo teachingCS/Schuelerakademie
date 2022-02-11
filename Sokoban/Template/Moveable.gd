@@ -1,7 +1,8 @@
 extends Area2D
 
 const TILE_SIZE = 64
-const SPEED = .25
+
+var speed = .25
 
 var moving = false
 
@@ -9,15 +10,6 @@ var moving = false
 func _on_Tween_tween_completed(_object, _key):
 	moving = false
 	
-	
-func move(direction:Vector2):
-	if moving:
-		return
-	if direction_free(direction):
-		moving = true
-		direction *= TILE_SIZE
-		$Tween.interpolate_property(self, "position", position, position+direction, SPEED, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN, 0)
-		$Tween.start()
 		
 		
 func direction_free(direction):

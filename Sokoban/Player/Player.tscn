@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Template/Moveable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Player_icon.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 14.2593, -27.063, 20.9864, -22.6903, 25.6114, -16.5518, 28.1341, -12.0109, 29.3113, -7.55417, 30.0681, -3.01333, 30.3204, 2.28432, 29.8999, 5.6479, 28.5545, 10.3569, 26.2, 14.4773, 23.7614, 18.3454, 20.0615, 22.2976, 15.3524, 25.7453, 9.9707, 28.8566, 3.07534, 29.3612, -4.07227, 29.2771, -10.1267, 27.343, -15.1721, 24.7363, -19.9652, 21.1204, -23.5811, 17.2523, -27.1969, 11.5342, -28.5424, 5.47972, -29.5514, -0.911091, -29.131, -5.95647, -27.8696, -10.8337, -26.0197, -15.2904, -22.572, -19.6631, -18.5357, -23.5312, -14.9198, -25.9698, -10.4631, -27.7357, -5.58589, -29.4175, 1.56173, -29.922, 6.52302, -29.5016 )
 
 [node name="Player" instance=ExtResource( 1 )]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 3 )
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 0.168175, -0.16818 )
+
 [node name="Sprite" parent="." index="1"]
+position = Vector2( 0.0840912, -0.0840912 )
 texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="7"]
+occluder = SubResource( 1 )
