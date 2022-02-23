@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Sokoban"
-run/main_scene="res://Template/LevelTemplate.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Levels/Level01.tscn"
+config/icon="res://Sprites/Player_icon.png"
+
+[autoload]
+
+GameState="*res://GameState/GameState.tscn"
 
 [input]
 
