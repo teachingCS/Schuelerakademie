@@ -8,7 +8,7 @@ func _ready():
 
 
 
-
-func _on_Goals_victory():
+func _on_VictoryParticles_particles_done():
 	GameState.current_level += 1
 	GameState.load_level()
+
