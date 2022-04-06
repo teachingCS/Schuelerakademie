@@ -14,6 +14,9 @@ func _unhandled_input(event):
 		move(Vector2.LEFT)
 	elif event.is_action_pressed("Right"):
 		move(Vector2.RIGHT)
+	elif event.is_action_pressed("Menu"):
+		# Das Menu wird als Szene geladen
+		get_tree().change_scene("res://UI/MainScene.tscn")
 		
 func blocked():
 	$Tween.stop_all()
