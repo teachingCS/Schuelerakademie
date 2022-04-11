@@ -5,6 +5,7 @@ signal particles_done
 func _on_Goals_victory():
 	emitting = true
 	$Timer.start()
+	$AudioStreamPlayer.play()
 
 
 

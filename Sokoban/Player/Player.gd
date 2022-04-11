@@ -33,3 +33,4 @@ func move(direction:Vector2):
 		direction *= TILE_SIZE
 		$Tween.interpolate_property(self, "position", position, position+direction, speed, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN, 0)
 		$Tween.start()
+		$AudioStreamPlayer.play()
